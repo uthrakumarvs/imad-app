@@ -3,6 +3,7 @@ body {
     background-image: url("http://mut.ru/twigif/gifs/20121222_101649_511.gif");
     background-size: 100%;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: center; 
     background-color: lightgrey;
     margin-top: 75px;
