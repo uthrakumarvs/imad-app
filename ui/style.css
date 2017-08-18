@@ -1,6 +1,10 @@
 body {
     font-family: sans-serif;
-    background-image: url("http://mut.ru/twigif/gifs/20121222_101649_511.gif");
+    background-image: url("http://mut.ru/twigif/gifs/20121222_101649_511.gif") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
     background-color: lightgrey;
     margin-top: 75px;
 }
