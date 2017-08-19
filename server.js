@@ -5,13 +5,74 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleone={
+    title: 'Uk page 1 article',
+    heading:'This is article 1 using embedded/internal css',
+    date:'date',
+    para:` <p>
+                Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.
+            </p>
+            <p>
+                hey all say heloooooooooooooooooooooooooo.
+            </p>
+        </div>
+        <hr/>
+        <div>
+            <a href="https://www.facebook.com/">Facebook login here</a>
+        </div>`
+};
+
+
+
+function createtemplate(data){
+    var title=data.title;
+    var heading=data.heading;
+    var date=data.date;
+    var para=data.para;
+var HtmlTemplate = `<html>
+    <head>
+        <title> ${title} </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <style>
+            .internal{
+                max-width: 700px;
+    margin: 0 auto;
+    color: #b7122f;
+    padding-top: 100;
+    padding-left: 10;
+    padding-right: 10;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="internal">
+        <div>
+            <a href="/">Home</a>
+        </div>
+        <hr/>
+        <div>
+            ${date}
+        </div>
+        <h2>
+            ${heading}
+        </h2>
+        <div>
+           ${para}
+        </div>
+    </body>
+</html>
+`;
+return HtmlTemplate;
+}
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article1', function(req,res)
 {
-   res.sendFile(path.join(__dirname, 'ui', 'article1.html')); 
+   res.send(createtemplate(articleone)); 
 });
 
 app.get('/article2', function(req,res)
