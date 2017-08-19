@@ -8,7 +8,7 @@ var img=document.getElementById('pic');
 var marginLeft=0;
 
 function moveright(){
-  moveLeft=moveLeft+10;
+  marginLeft=marginLeft+10;
   img.style.marginLeft= marginLeft+ px;
 }
 
