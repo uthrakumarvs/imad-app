@@ -5,10 +5,11 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleone={
+var articles={
+'article1':{
     title: 'Uk page 1 article',
     heading:'This is article 1 using embedded/internal css',
-    date:'date',
+    date:'date 1',
     para:` <p>
                 Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.
             </p>
@@ -20,8 +21,38 @@ var articleone={
         <div>
             <a href="https://www.facebook.com/">Facebook login here</a>
         </div>`
+},
+'article2':{ 
+    title: 'Uk page 2 article',
+    heading:'This is article 2 using external css',
+    date:'date 2',
+    para:` <p>
+                Just a demo content.Just a demo content.
+            </p>
+            <p>
+                hey all say heloooooooooooooooooooooooooo.
+            </p>
+        </div>
+        <hr/>
+        <div>
+            <a href="https://www.facebook.com/">Facebook login here</a>
+        </div>`},
+'article3':{
+    title: 'Uk page 3 article',
+    heading:'This is article 3 using external css',
+    date:'date 3',
+    para:` <p>
+                Just a demo content.Just a demo content.
+            </p>
+            <p>
+                hey all say heloooooooooooooooooooooooooo.
+            </p>
+        </div>
+        <hr/>
+        <div>
+            <a href="https://www.facebook.com/">Facebook login here</a>
+        </div>`},
 };
-
 
 
 function createtemplate(data){
@@ -70,9 +101,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article1', function(req,res)
+app.get('/:articlename', function(req,res)
 {
-   res.send(createtemplate(articleone)); 
+    //articlename==article1
+    var articlename=req.params.articlename;
+   res.send(createtemplate(articles[articlename])); 
 });
 
 app.get('/article2', function(req,res)
