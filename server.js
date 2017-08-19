@@ -19,9 +19,9 @@ app.get('/article2', function(req,res)
    res.send('article2 handled here'); 
 });
 
-app.get('/article2', function(req,res)
+app.get('/article3', function(req,res)
 {
-   res.send('article2 handled here'); 
+   res.send('article3 handled here'); 
 });
 
 
