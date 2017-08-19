@@ -4,5 +4,12 @@ ele.innerHTML='yov yo';
 var img=document.getElementById('pic');
 img.onclick = function() {
     img.style.marginLeft='100px';
-    return img;
+};
+var img=document.getElementById('pic');
+img.onclick = function() {
+    img.style.marginLeft='100px';
+};
+var img=document.getElementById('pic');
+img.onclick = function() {
+    img.style.marginLeft='100px';
 };
