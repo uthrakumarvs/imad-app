@@ -8,7 +8,7 @@ app.use(morgan('combined'));
 var articles={
 'article1':{
     title: 'Uk page 1 article',
-    heading:'This is article 1 using embedded/internal css',
+    heading:'This is article 1 using external css',
     date:'date 1',
     para:` <p>
                 Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.Just a demo content.
@@ -64,16 +64,7 @@ var HtmlTemplate = `<html>
     <head>
         <title> ${title} </title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <style>
-            .internal{
-                max-width: 700px;
-    margin: 0 auto;
-    color: #b7122f;
-    padding-top: 100;
-    padding-left: 10;
-    padding-right: 10;
-            }
-        </style>
+        <link href="/ui/style.css" rel="stylesheet" />
     </head>
     <body>
         <div class="internal">
@@ -108,10 +99,10 @@ app.get('/:articlename', function(req,res)
    res.send(createtemplate(articles[articlename])); 
 });
 
-app.get('/article2', function(req,res)
-{
-    res.sendFile(path.join(__dirname, 'ui', 'article2.html'));  
-});
+//app.get('/article2', function(req,res)
+//{
+  //  res.sendFile(path.join(__dirname, 'ui', 'article2.html'));  
+//});
 
 app.get('/article3', function(req,res)
 {
