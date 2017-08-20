@@ -1,8 +1,8 @@
 console.log('Loaded!');
 
 
-var ele=document.getElementById('title');
-ele.innerHTML='yov yo';
+//var ele=document.getElementById('title');
+//ele.innerHTML='yov yo';
 var img=document.getElementById('pic');
 
 var marginLeft=0;
